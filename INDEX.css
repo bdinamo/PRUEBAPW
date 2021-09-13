@@ -1,3 +1,79 @@
 .custom-title {
-    color:blue
+font-size: 60px;
+}
+
+.main-div {
+    margin-left: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: gray;
+    justify-content: center;
+    align-self: center;
+}
+
+.navbar {
+    background-color: lightblue ;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    box-shadow: 10px 5px 5px black;   
+    
+}
+
+.navbar-element {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.navbar-element:hover {
+    color: brown;
+    text-decoration: underline
+}
+
+.description {
+    font-weight: bold;
+    color: black
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: lightblue;
+    box-shadow: 10px 5px 5px black;   
+}
+
+.row-image-desc {
+    display: flex;
+    flex-direction: row;
+}
+
+.picture {
+    height: 150px;
+    border-radius: 10px;
+    border-image-outset: 1 1.2;
+}
+
+.long-desc {
+    margin-left: 10px;
+}
+
+.descriptive-text {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.price {
+    color: brown;
+    font-size: 30px;
+    align-self: flex-end;
+}
+
+.fondo {
+    background-color: gray;
 }
