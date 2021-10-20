@@ -11,6 +11,8 @@ import Navbar from "./components/Navbar/Navbar";
 import LoginScreen from "./components/LoginScreen/LoginScreen";
 import CourseDetail from "./components/CourseDetail/CourseDetail";
 import AuthRoute from "./components/AuthRoute";
+import Register from './components/register';
+
 
 function App() {
 
@@ -18,6 +20,9 @@ function App() {
     <Router>
       <div>
         <Switch>
+        <Route exact={true} path={`/register`}>
+              <Register />
+            </Route>
           <AuthRoute exact={true} path={`/profile`}>
             <Profile />
           </AuthRoute>
