@@ -10,6 +10,7 @@ function SubjectCard ({subject}) {
         <img src={pgimg} className="card-img-top" alt="..."/>
         <div className="card-body">
           <h5 className="card-title">{subject.name}</h5>
+          <p className="card-text">{subject.descr}</p>
           <Link to={`/courses/detail/${subject.name}`}><a className="btn btn-primary">Ver más</a></Link>
         </div>
       </div>
