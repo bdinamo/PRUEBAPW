@@ -37,9 +37,6 @@ function App() {
             <Route exact={true} path={`/courses/detail/:id`}>
               <CourseDetail/>
             </Route>
-            <Route path="*">
-              <div><h1>404</h1></div>
-            </Route>
           </Route>
         </Switch>
       </div>

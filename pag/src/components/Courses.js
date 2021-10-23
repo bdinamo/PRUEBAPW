@@ -8,7 +8,8 @@ const Courses = () => {
   const subjects = [
     { name: 'Matemática', approved: 12} ,
     { name: 'Programación Web', approved: 12} ,
-    { name: 'Algoritmos', approved: 8}
+    { name: 'Algoritmos', approved: 8} ,
+    { name: 'Prueba', approved: 7}
   ]
 
   const clickFunction = () => {
@@ -31,7 +32,7 @@ const Courses = () => {
 
   return (<div className='general'>
     <div className="main-div">
-      <h1 className="custom-title">Todos los cursos</h1>
+      <h1 className="custom-title">Todos los productos</h1>
     </div>
     <div className="main-div">
       <button className="btn btn-primary" onClick={clickFunction}>

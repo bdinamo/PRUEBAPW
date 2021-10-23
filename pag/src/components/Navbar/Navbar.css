@@ -4,10 +4,26 @@
     height: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
+}
+
+.navbarde {
+    background-color: lightblue;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .navbar-element {
     margin-left: 20px;
     margin-right: 10px;
+}
+
+.navbarproduct {
+    background-color: lightblue;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
