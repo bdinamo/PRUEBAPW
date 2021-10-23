@@ -6,10 +6,10 @@ const Courses = () => {
   const [filtered, setFiltered] = useState(false)
 
   const subjects = [
-    { name: 'Matemática', approved: 12} ,
-    { name: 'Programación Web', approved: 12} ,
-    { name: 'Algoritmos', approved: 8} ,
-    { name: 'Prueba', approved: 7}
+    { name: 'Notebook', approved: 12} ,
+    { name: 'Monitores', approved: 12} ,
+    { name: 'Accesorios', approved: 8} ,
+    { name: 'Procesadores', approved: 7}
   ]
 
   const clickFunction = () => {
