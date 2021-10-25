@@ -53,25 +53,14 @@ body {
     font-family: Helvetica;
 }
 
-.price {
-    color: brown;
-    font-size: 30px;
-    align-self: flex-end;
-}
 
 
-.padre {
-    background-color: gray;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 160px;
-    align-items: flex-end;
-}
 
 .card-container-custom {
     margin-left: 24px;
     width: 250px;
+
+
 }
 
 .all-cards {

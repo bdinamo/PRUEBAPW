@@ -1,4 +1,5 @@
-import pgimg from "../images/programacion.jpeg";
+import pgimg from "../images/mejores-notebooks-2021.jpg";
+
 import {Link} from "react-router-dom";
 
 
