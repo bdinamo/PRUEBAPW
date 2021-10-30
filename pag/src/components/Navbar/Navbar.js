@@ -1,16 +1,28 @@
 import './Navbar.css';
 import {Link} from "react-router-dom";
 
+
 const Navbar = () => {
   return <div className="navbar">
-    <Link to={'/'}><h4 className="navbar-element">Inicio</h4></Link>
-    <Link to={'/profile'}><h4 className="navbar-element">Ingresá</h4></Link>
-    <Link to={'/register'}><h4 className="navbar-element">Registrate</h4></Link>
-    <Link to={'/courses'}><h4 className="navbar-element">Mis Compras</h4></Link>
-    <Link to={'/courses'}><h4 className="navbar-element">Productos</h4></Link>
-    <h4 className= 'navbar-element'>  Buscar: </h4><Link to={'/courses'}>
-    <h4 className="navbar-element-barra"><input type="text" ></input></h4></Link>
-
+    <Link to={'/Inicio'}><button class="btn btn-secondary">Inicio</button></Link>
+    <Link to={'/login'}><button class="btn btn-secondary">Ingresá</button></Link>
+    <Link to={'/register'}><button class="btn btn-secondary">Registrate</button></Link>
+    <Link to={'/profile'}><button class="btn btn-secondary">Mis compras</button></Link>
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Productos
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <Link to={'/Notebook'}><a class="dropdown-item" href='#'>Notebook</a></Link>
+        <Link to={'/Monitores'}><a class="dropdown-item" href="#">Monitores</a></Link>
+        <Link to={'/Accesorios'}><a class="dropdown-item" href="#">Accesorios</a></Link>
+        <Link to={'/Procesadores'}><a class="dropdown-item" href="#">Procesadores</a></Link>
+        <li><hr class="dropdown-divider"></hr></li>
+        <Link to={'/courses'}><li><a class="dropdown-item" href="#">Todos los productos</a></li></Link>
+    </div>
 </div>
+    <button className= "btn btn-secondary">  Buscar:</button>
+    <button className="navbar-element-barra" ><input type="text" maxlength="50"></input></button>
+    </div>
 }
 export default Navbar;

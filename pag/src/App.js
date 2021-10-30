@@ -12,7 +12,11 @@ import LoginScreen from "./components/LoginScreen/LoginScreen";
 import CourseDetail from "./components/CourseDetail/CourseDetail";
 import AuthRoute from "./components/AuthRoute";
 import Register from './components/register';
-
+import Inicio from './components/Inicio';
+import Notebooks from './components/Notebook';
+import Monitores from './components/Monitores';
+import Procesadores from './components/Procesadores';
+import Accesorios from './components/Accesorios';
 
 function App() {
 
@@ -23,9 +27,9 @@ function App() {
         <Route exact={true} path={`/register`}>
               <Register />
             </Route>
-          <AuthRoute exact={true} path={`/profile`}>
+          <Route exact={true} path={`/profile`}>
             <Profile />
-          </AuthRoute>
+          </Route>
           <Route exact={true} path="/login">
             <LoginScreen />
           </Route>
@@ -36,6 +40,21 @@ function App() {
             </Route>
             <Route exact={true} path={`/courses/detail/:id`}>
               <CourseDetail/>
+            </Route>
+            <Route exact={true} path={`/Notebook`}>
+              <Notebooks />
+            </Route>
+            <Route exact={true} path={`/Monitores`}>
+              <Monitores />
+            </Route>
+            <Route exact={true} path={`/Procesadores`}>
+              <Procesadores />
+            </Route>
+            <Route exact={true} path={`/Accesorios`}>
+              <Accesorios />
+            </Route>
+            <Route exact={true} path={`/Inicio`}>
+              <Inicio />
             </Route>
           </Route>
         </Switch>
