@@ -17,6 +17,7 @@ import Notebooks from './components/Notebook';
 import Monitores from './components/Monitores';
 import Procesadores from './components/Procesadores';
 import Accesorios from './components/Accesorios';
+import Allproducts from './components/Allproducts';
 
 
 function App() {

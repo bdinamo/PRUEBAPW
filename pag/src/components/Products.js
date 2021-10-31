@@ -1,37 +1,15 @@
-import SubjectCard from "./SubjectCard";
+import Allproducts from "./Allproducts";
 import {useState} from "react";
 
-const Products = () => {
-  
-  const [filtered, setFiltered] = useState(false)
-  
-
-  const subjects = [
+const product = () => {
+    const producto = [
     { name: 'Notebook'},
     { name: 'Monitores'},
-    { name: 'Procesadores'},
-    { name: 'Accesorios'}
-  ]
+    { name: 'Accesorios'},
+    { name: 'Procesadores'}
+    ]
 
-  const clickFunction = () => {
-    setFiltered(!filtered)
-  }
-
-  const getName = () => {
-    return filtered ? "Dejar de filtrar" : "Filtrar"
-  }
-
-  let finalSubjects;
-
-  if (filtered) {
-    finalSubjects = subjects.filter((subject) => {
-      return subject.approved > 10
-    })
-  } else {
-    finalSubjects = subjects
-  }
-
-  return (<div className='general'>
+    return (<div className='general'>
     <div className="main-div">
       <h1 className="custom-title">Todos los Productos</h1>
     </div>
@@ -39,15 +17,14 @@ const Products = () => {
     </div>
     <div className="all-cards">
       {
-        finalSubjects
-          .map((mapSubject) => {
-            return (
-              <SubjectCard subject={mapSubject}/>
+      producto
+      .map((mapSubject) => {
+        return (
+          <Allproducts product={mapSubject}/>
             )
           })
       }
     </div>
   </div>)
 }
-
-export default Products
+export default product
