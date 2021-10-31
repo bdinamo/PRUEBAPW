@@ -4,14 +4,13 @@ import {useState} from "react";
 const Monitores = () => {
 
   const [filtered, setFiltered] = useState(false)
-  var image = 25;
-
+  
 
   const subjects = [
-    { name: 'Monitor1', descr: image } ,
-    { name: 'Monitor2', descr: image },
-    { name: 'Monitor3', descr: image } ,
-    { name: 'Monitor4', descr: image }
+    { name: 'Monitor1'},
+    { name: 'Monitor2'},
+    { name: 'Monitor3'},
+    { name: 'Monitor4'}
   ]
 
   const clickFunction = () => {

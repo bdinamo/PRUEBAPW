@@ -12,7 +12,7 @@ function SubjectCard ({subject}) {
         <div className="card-body">
           <h5 className="card-title">{subject.name}</h5>
           <p className="card-text">{subject.descr}</p>
-          <Link to={`/courses/detail/${subject.name}`}><a className="btn btn-primary">Ver más</a></Link>
+          <Link to={`/products/detail/${subject.name}`}><a className="btn btn-primary">Ver Más</a></Link>
         </div>
       </div>
     </div>

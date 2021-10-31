@@ -1,15 +1,16 @@
 import SubjectCard from "./SubjectCard";
 import {useState} from "react";
 
-const Courses = () => {
-
+const Products = () => {
+  
   const [filtered, setFiltered] = useState(false)
+  
 
   const subjects = [
-    { name: 'Notebook' } ,
-    { name: 'Monitores' } ,
-    { name: 'Accesorios' } ,
-    { name: 'Procesadores' }
+    { name: 'Notebook'},
+    { name: 'Monitores'},
+    { name: 'Procesadores'},
+    { name: 'Accesorios'}
   ]
 
   const clickFunction = () => {
@@ -32,12 +33,9 @@ const Courses = () => {
 
   return (<div className='general'>
     <div className="main-div">
-      <h1 className="custom-title">Todos los productos</h1>
+      <h1 className="custom-title">Todos los Productos</h1>
     </div>
     <div className="main-div">
-      <button className="btn btn-primary" onClick={clickFunction}>
-        {getName()}
-      </button>
     </div>
     <div className="all-cards">
       {
@@ -52,4 +50,4 @@ const Courses = () => {
   </div>)
 }
 
-export default Courses
+export default Products

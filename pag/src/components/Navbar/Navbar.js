@@ -18,7 +18,7 @@ const Navbar = () => {
         <Link to={'/Accesorios'}><a class="dropdown-item" href="#">Accesorios</a></Link>
         <Link to={'/Procesadores'}><a class="dropdown-item" href="#">Procesadores</a></Link>
         <li><hr class="dropdown-divider"></hr></li>
-        <Link to={'/courses'}><li><a class="dropdown-item" href="#">Todos los productos</a></li></Link>
+        <Link to={'/Products'}><li><a class="dropdown-item" href="#">Todos los productos</a></li></Link>
     </div>
 </div>
     <button className= "btn btn-secondary">  Buscar:</button>
