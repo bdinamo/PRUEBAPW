@@ -7,10 +7,10 @@ const Accesorios = () => {
   const [filtered, setFiltered] = useState(false)
 
   const subjects = [
-    { name: 'Accesorio1', img:imagnes.accesorios  } ,
-    { name: 'Accesorio2', img:imagnes.accesorios  } ,
-    { name: 'Accesorio3', img:imagnes.accesorios  } ,
-    { name: 'Accesorio4', img:imagnes.accesorios  }
+    { name: 'Mauses', img:imagnes.accesorios  } ,
+    { name: 'Teclados', img:imagnes.accesorios  } ,
+    { name: 'Auriculares', img:imagnes.accesorios  } ,
+    { name: 'CamarasWeb', img:imagnes.accesorios  }
   ]
 
   const clickFunction = () => {

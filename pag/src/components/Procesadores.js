@@ -7,9 +7,9 @@ const Procesadores = () => {
   const [filtered, setFiltered] = useState(false)
 
   const subjects = [
-    { name: 'Intel', img: Images.intel , descr: 'Esta es la descripcion' } ,
-    { name: 'AMD', img: Images.amd } ,
-    { name: 'Otros', img: Images.proces } ,
+    { name: 'Intel', img: Images.intel , descr: 'Los nombres de los procesadores Intel® son útiles a la hora de elegir una CPU para gaming. Considéralos una clave para comprender los atributos de un procesador en particular. Los nombres de CPU Intel® contienen información sobre las capacidades de una CPU, incluido el desempeño, las características y el uso previsto, lo que ayuda a identificar rápidamente la CPU adecuada para tu juego.' } ,
+    { name: 'AMD', img: Images.amd ,descr: 'Clave en el rendimiento de tu computadora de escritorio, ya no tenés que pensar en cómo distribuir el tiempo y acciones porque ahora las tareas en simultáneo son posibles.AMD cuenta con un catálogo de productos que se adaptan a los requerimientos de todo tipo de usuarios: juegos en línea, edición a gran escala, contenido en múltiples plataformas y más.' } ,
+    { name: 'Otros', img: Images.proces, descr: '' } ,
 
   ]
 

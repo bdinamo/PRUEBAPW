@@ -12,12 +12,12 @@ const Monitores = () => {
   
 
   const subjects = [
-    { name: 'LG', img:imagnes.monitores},
-    { name: 'Asus', img:imagnes.monitores},
-    { name: 'Samsung', img:imagnes.monitores},
-    { name: 'HP', img:imagnes.monitores},
-    { name: 'ViewSonic', img:imagnes.monitores},
-    { name: 'BENQ', img:imagnes.monitores},
+    { name: 'LG', img:imagnes.LG},
+    { name: 'Asus', img:imagnes.asus},
+    { name: 'Samsung', img:imagnes.samsung},
+    { name: 'HP', img:imagnes.HP},
+    { name: 'DELL', img:imagnes.Dell},
+    { name: 'BENQ', img:imagnes.Benq},
   ]
 
   const clickFunction = () => {
@@ -41,7 +41,7 @@ const Monitores = () => {
   return (<div className='general'>
 
     <div className="main-div">
-      <h1 className="custom-title">Todos los Monitores</h1>
+      <h1 className="custom-title">Nuestras marcas</h1>
     </div>
     <div className="main-div">
     </div>
