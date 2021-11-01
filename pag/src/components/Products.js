@@ -1,12 +1,12 @@
 import Allproducts from "./Allproducts";
 import {useState} from "react";
-
+import images from "../images/imgnes";
 const product = () => {
     const producto = [
-    { name: 'Notebook'},
-    { name: 'Monitores'},
-    { name: 'Accesorios'},
-    { name: 'Procesadores'}
+    { name: 'Notebook', img: images.notebooks },
+    { name: 'Monitores', img: images.monitores},
+    { name: 'Accesorios', img: images.accesorios},
+    { name: 'Procesadores', img: images.procesadores}
     ]
 
     return (<div className='general'>

@@ -1,15 +1,16 @@
 import SubjectCard from "./SubjectCard";
 import {useState} from "react";
+import imagnes from '../images/imgnes';
 
 const Notebooks = () => {
 
   const [filtered, setFiltered] = useState(false)
 
   const subjects = [
-    { name: 'Notebook1' } ,
-    { name: 'Notebook2' } ,
-    { name: 'Notebook3' } ,
-    { name: 'Notebook4' }
+    { name: 'Notebook1', img: imagnes.notebooks } ,
+    { name: 'Notebook2', img: imagnes.notebooks } ,
+    { name: 'Notebook3', img: imagnes.notebooks } ,
+    { name: 'Notebook4', img: imagnes.notebooks }
   ]
 
   const clickFunction = () => {

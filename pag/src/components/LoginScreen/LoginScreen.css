@@ -4,8 +4,9 @@
     align-items: center;
     padding: 40px 80px 40px 40px ;
     background-color: darkslategray;
-    height: 1000px;
-    justify-content: space-between;
+    height: 100vh;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 .form-container {
@@ -26,4 +27,8 @@
     background-color: darkgrey;
     padding: 10px;
     border-radius: 10px;
+    align-items: center;
+    /*position: absolute;
+    top: 1px;*/
+
 }

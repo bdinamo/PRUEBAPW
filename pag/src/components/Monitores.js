@@ -1,16 +1,23 @@
+
 import SubjectCard from "./SubjectCard";
 import {useState} from "react";
+import imagnes from '../images/imgnes';
 
 const Monitores = () => {
+
+
+
 
   const [filtered, setFiltered] = useState(false)
   
 
   const subjects = [
-    { name: 'Monitor1'},
-    { name: 'Monitor2'},
-    { name: 'Monitor3'},
-    { name: 'Monitor4'}
+    { name: 'LG', img:imagnes.monitores},
+    { name: 'Asus', img:imagnes.monitores},
+    { name: 'Samsung', img:imagnes.monitores},
+    { name: 'HP', img:imagnes.monitores},
+    { name: 'ViewSonic', img:imagnes.monitores},
+    { name: 'BENQ', img:imagnes.monitores},
   ]
 
   const clickFunction = () => {
@@ -32,6 +39,7 @@ const Monitores = () => {
   }
 
   return (<div className='general'>
+
     <div className="main-div">
       <h1 className="custom-title">Todos los Monitores</h1>
     </div>

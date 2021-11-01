@@ -1,15 +1,16 @@
 import SubjectCard from "./SubjectCard";
 import {useState} from "react";
+import Images from '../images/imgnes'
 
 const Procesadores = () => {
 
   const [filtered, setFiltered] = useState(false)
 
   const subjects = [
-    { name: 'Procesador1' } ,
-    { name: 'Procesador2' } ,
-    { name: 'Procesador3' } ,
-    { name: 'Procesador4' }
+    { name: 'Intel', img: Images.intel , descr: 'Esta es la descripcion' } ,
+    { name: 'AMD', img: Images.amd } ,
+    { name: 'Otros', img: Images.proces } ,
+
   ]
 
   const clickFunction = () => {

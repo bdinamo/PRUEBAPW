@@ -6,7 +6,9 @@ const LoginScreen = () => {
 
   return (
     <div className='login-screen'>
-      <div className='welcome-text-container'><h1>Hola! Ingresá tu e-mail y contraseña</h1></div>
+      <div className='welcome-text-container'>
+        <h1>Hola! Ingresá tu e-mail y contraseña</h1>
+      </div>
       <div className='form-register'>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
