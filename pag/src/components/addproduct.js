@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {httpGet, httpPost} from "../utils/httpFunction"
 
 
-const Courses = () => {
+const Addproduct = () => {
 
   const [filtered, setFiltered] = useState(false)
   const [courses, setCourses] = useState([])
@@ -87,4 +87,4 @@ const Courses = () => {
   </div>)
 }
 
-export default Courses
+export default Addproduct
