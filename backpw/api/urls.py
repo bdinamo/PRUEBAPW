@@ -2,7 +2,7 @@
 from django.urls import path, include
 from rest_framework import routers
 
-from api.views import CourseViewSet
+from api.views import ProductViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from api.views import RegisterView
@@ -10,7 +10,7 @@ from api.views import RegisterView
 from api.views import me
 
 router = routers.DefaultRouter()
-router.register(r'courses', CourseViewSet)
+router.register(r'product', ProductViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

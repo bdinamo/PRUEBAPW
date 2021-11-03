@@ -17,6 +17,7 @@ const Navbar = () => {
         <Link to={'/Monitores'}><a class="dropdown-item" href="#">Monitores</a></Link>
         <Link to={'/Accesorios'}><a class="dropdown-item" href="#">Accesorios</a></Link>
         <Link to={'/Procesadores'}><a class="dropdown-item" href="#">Procesadores</a></Link>
+        <Link to={'/addproduct'}><a class="dropdown-item" href="#">Agregar producto</a></Link>
         <li><hr class="dropdown-divider"></hr></li>
         <Link to={'/Products'}><li><a class="dropdown-item" href="#">Todos los productos</a></li></Link>
     </div>

@@ -17,7 +17,7 @@ import Notebooks from './components/Notebook';
 import Monitores from './components/Monitores';
 import Procesadores from './components/Procesadores';
 import Accesorios from './components/Accesorios';
-import Allproducts from './components/Allproducts';
+import Courses from './components/addproduct';
 
 
 function App() {
@@ -28,6 +28,9 @@ function App() {
         <Switch>
         <Route exact={true} path={`/register`}>
               <Register />
+            </Route>
+            <Route exact={true} path={`/addproduct`}>
+              <Courses />
             </Route>
           <Route exact={true} path={`/profile`}>
             <Profile />

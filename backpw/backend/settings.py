@@ -141,3 +141,25 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    }
+}
+
+# aca lo normal seria poner la lista de url's de front end apps que queremos dejar que le hagan requests a este backend
+# por ej: http://localhost:3000
+#
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://localhost:3000/addproduct'
+]
+
+# dejar esta setting en True permite que cualquier front end app pueda hacer requests a este backend gnorando
+# la setting de arriba, lo seguro seria dejar esta setting en False y completar la lista de url's en esa setting
+CORS_ALLOW_ALL_ORIGINS = True

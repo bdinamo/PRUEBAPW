@@ -1,12 +1,12 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from api.models import Course
+from api.models import Product
 
 
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Course
+        model = Product
         fields = "__all__"
 
 
