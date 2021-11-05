@@ -14,7 +14,7 @@ const LoginScreen = () => {
     e.preventDefault()
     httpPost('api/login/', {username: username, password: password}).then((res) => {
       localStorage.setItem('token', res.data.access)
-      history.push('/main')
+      history.push('/Inicio')
     })
   }
 

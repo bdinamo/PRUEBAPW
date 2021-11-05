@@ -7,7 +7,7 @@ const Navbar = () => {
     <Link to={'/Inicio'}><button class="btn btn-secondary">Inicio</button></Link>
     <Link to={'/login'}><button class="btn btn-secondary">Ingresá</button></Link>
     <Link to={'/register'}><button class="btn btn-secondary">Registrate</button></Link>
-    <Link to={'/profile'}><button class="btn btn-secondary">Mis compras</button></Link>
+    <Link to={'/profile'}><button class="btn btn-secondary">Mi perfil</button></Link>
     <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Productos
