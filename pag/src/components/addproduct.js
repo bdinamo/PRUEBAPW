@@ -10,6 +10,8 @@ const Addproduct = () => {
 
   const [name, setName] = useState([])
   const [description, setDescription] = useState([])
+  const [price, setPrice] = useState([])
+  const [tipo , setTipo] = useState([])
 
 
   const subjects = [
@@ -42,7 +44,7 @@ const Addproduct = () => {
   }
 
   const createCourse = () => {
-    httpPost('api/product/', { name: name, description: description})
+    httpPost('api/product/', { name: name, description: description, price: price, tipo: tipo})
       .then(fetchCourses)
   }
 
@@ -60,6 +62,12 @@ const Addproduct = () => {
         <fieldset>
           <legend>Disabled fieldset example</legend>
           <div className="mb-3">
+            <label htmlFor="disabledTextInput" className="form-label" >Tipo de producto</label>
+           <input type="text" id="disabledTextInput" className="form-control"
+           placeholder= 'notebook, monitor o procesador' value={tipo}
+                   onChange={(e) => setTipo(e.target.value) }/>
+          </div>
+          <div className="mb-3">
             <label htmlFor="disabledTextInput" className="form-label">Name</label>
             <input type="text" id="disabledTextInput" className="form-control" value={name}
                    onChange={(e) => setName(e.target.value) }/>
@@ -70,7 +78,12 @@ const Addproduct = () => {
                    onChange={(e) => setDescription(e.target.value) }
             />
           </div>
-          <button type="submit" className="btn btn-primary">CREAR CURSO</button>
+          <div className="mb-3">
+            <label htmlFor="disabledTextInput" className="form-label">Precio</label>
+            <input type="text" id="disabledTextInput" className="form-control" value={price}
+                   onChange={(e) => setPrice(e.target.value) }/>
+          </div>
+          <button type="submit" className="btn btn-primary">CREAR PRODUCTO</button>
         </fieldset>
       </form>
     </div>

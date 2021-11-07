@@ -1,16 +1,21 @@
 import SubjectCard from "./SubjectCard";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import imagnes from '../images/imgnes';
+import {httpGet, httpPost} from "../utils/httpFunction"
 
 const Notebooks = () => {
 
   const [filtered, setFiltered] = useState(false)
+  const [notebook, setNotebooks] = useState([])
 
-  const subjects = [
-    { name: 'Notebook1', img: imagnes.notebooks } ,
-    { name: 'Notebook2', img: imagnes.notebooks } ,
-    { name: 'Notebook3', img: imagnes.notebooks } ,
-    { name: 'Notebook4', img: imagnes.notebooks }
+  const [name, setName] = useState([])
+  const [description, setDescription] = useState([])
+
+  const imagenes = [
+    { name: 'notebook28', img: imagnes.notebooks } ,
+    { name: 'notebook29', img: imagnes.notebooks } ,
+    { name: 'notebook30', img: imagnes.notebooks } ,
+    { name: 'notebook31', img: imagnes.notebooks }
   ]
 
   const clickFunction = () => {
@@ -24,12 +29,27 @@ const Notebooks = () => {
   let finalSubjects;
 
   if (filtered) {
-    finalSubjects = subjects.filter((subject) => {
-      return subject.approved > 10
+    finalSubjects = imagenes.filter((subject) => {
+      return imagenes.approved > 10
     })
   } else {
-    finalSubjects = subjects
+    finalSubjects = notebook
   }
+
+  const fetchNotebook = () => {
+    httpGet('api/notebook/')
+      .then((res) => 
+     setNotebooks(res.data))
+  }
+  
+  
+
+  const createNotebook = () => {
+    httpPost('api/notebook/', { name: name, description: description})
+      .then(fetchNotebook)
+  }
+
+  useEffect(fetchNotebook, [])
 
   return (<div className='general'>
     <div className="main-div">
