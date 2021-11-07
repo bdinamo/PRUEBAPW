@@ -32,9 +32,9 @@ function App() {
             <Route exact={true} path={`/addproduct`}>
               <Addproduct />
             </Route>
-          <Route exact={true} path={`/profile`}>
+            <AuthRoute exact={true} path={`/profile`}>
             <Profile />
-          </Route>
+          </AuthRoute>
           <Route exact={true} path="/login">
             <LoginScreen />
           </Route>
