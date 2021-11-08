@@ -24,5 +24,6 @@ const Navbar = () => {
     <button className= "btn btn-secondary">  Buscar:</button>
     <button className="navbar-element-barra" ><input type="text" maxlength="50"></input></button>
     </div>
+
 }
 export default Navbar;

@@ -1,6 +1,6 @@
 import Acesorios from './Acesorios.jpg'
 import Monitores from './Monitores.jpg'
-import Procesadores from './Procesadores.jpg'
+import Procesador from './Procesador.jpg'
 import Notebooks from './mejores-notebooks-2021.jpg'
 import intel from './intel.e.jpg'
 import amd from './amd.e.jpg'
@@ -15,7 +15,7 @@ import Benq from './Benq.jpg'
 export default {
     "accesorios":Acesorios,
     "monitores":Monitores,
-    "procesadores":Procesadores,
+    "Procesadores":Procesador,
     "notebooks": Notebooks,
     "intel": intel,
     "amd" : amd,

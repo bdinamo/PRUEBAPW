@@ -6,7 +6,7 @@ const product = () => {
     { name: 'Notebook', img: images.notebooks },
     { name: 'Monitores', img: images.monitores},
     { name: 'Accesorios', img: images.accesorios},
-    { name: 'Procesadores', img: images.procesadores}
+    { name: 'Procesador', img: images.Procesadores}
     ]
 
     return (<div className='general'>

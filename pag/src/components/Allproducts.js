@@ -18,7 +18,18 @@ return (
           <Link to={`/products/detail/${product.name}`}><a className="btn btn-primary">Ver Más</a></Link>
         </div>
       </div>
+        <div>
+            <nav aria-label="Page navigation example">
+                <ul className="pagination">
+                    <li className="page-item"><a className="page-link" href="#">Anterior</a></li>
+                    <li className="page-item"><a className="page-link" href="#">1</a></li>
+                    <li className="page-item"><a className="page-link" href="#">2</a></li>
+                    <li className="page-item"><a className="page-link" href="#">Siguiente</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
+
   )
 }
 
