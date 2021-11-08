@@ -5,43 +5,19 @@ import {httpGet, httpPost} from "../utils/httpFunction"
 
 const Notebooks = () => {
 
-  const [filtered, setFiltered] = useState(false)
   const [notebook, setNotebooks] = useState([])
 
   const [name, setName] = useState([])
   const [description, setDescription] = useState([])
+  const [price, setPrice] = useState([])
 
-  const imagenes = [
-    { name: 'notebook28', img: imagnes.notebooks } ,
-    { name: 'notebook29', img: imagnes.notebooks } ,
-    { name: 'notebook30', img: imagnes.notebooks } ,
-    { name: 'notebook31', img: imagnes.notebooks }
-  ]
-
-  const clickFunction = () => {
-    setFiltered(!filtered)
-  }
-
-  const getName = () => {
-    return filtered ? "Dejar de filtrar" : "Filtrar"
-  }
-
-  let finalSubjects;
-
-  if (filtered) {
-    finalSubjects = imagenes.filter((subject) => {
-      return imagenes.approved > 10
-    })
-  } else {
-    finalSubjects = notebook
-  }
+  let finalSubjects = notebook
 
   const fetchNotebook = () => {
     httpGet('api/notebook/')
       .then((res) => 
      setNotebooks(res.data))
   }
-  
   
 
   const createNotebook = () => {

@@ -5,46 +5,23 @@ import {httpGet, httpPost} from "../utils/httpFunction"
 
 const Addproduct = () => {
 
-  const [filtered, setFiltered] = useState(false)
   const [courses, setCourses] = useState([])
 
   const [name, setName] = useState([])
   const [description, setDescription] = useState([])
   const [price, setPrice] = useState([])
-  const [tipo , setTipo] = useState([])
+ 
 
+  let finalSubjects = courses
 
-  const subjects = [
-    { name: 'Matemática', approved: 12} ,
-    { name: 'Programación Web', approved: 12} ,
-    { name: 'Algoritmos', approved: 8}
-  ]
-
-  const clickFunction = () => {
-    setFiltered(!filtered)
-  }
-
-  const getName = () => {
-    return filtered ? "Dejar de filtrar" : "Filtrar"
-  }
-
-  let finalSubjects;
-
-  if (filtered) {
-    finalSubjects = courses.filter((subject) => {
-      return subject.approved > 10
-    })
-  } else {
-    finalSubjects = courses
-  }
 
   const fetchCourses = () => {
-    httpGet('api/product/')
+    httpGet('api/procesadores/')
       .then((res) => setCourses(res.data))
   }
 
   const createCourse = () => {
-    httpPost('api/product/', { name: name, description: description, price: price, tipo: tipo})
+    httpPost('api/procesadores/', { name: name, description: description, price: price})
       .then(fetchCourses)
   }
 
@@ -52,21 +29,12 @@ const Addproduct = () => {
 
   return (<div className='general'>
     <div className="main-div">
-      <h1 className="custom-title">Todos los cursos</h1>
+      <h1 className="custom-title">Agregar productos</h1>
     </div>
     <div className="main-div">
-      <button className="btn btn-primary" onClick={clickFunction}>
-        {getName()}
-      </button>
       <form onSubmit={createCourse}>
         <fieldset>
           <legend>Disabled fieldset example</legend>
-          <div className="mb-3">
-            <label htmlFor="disabledTextInput" className="form-label" >Tipo de producto</label>
-           <input type="text" id="disabledTextInput" className="form-control"
-           placeholder= 'notebook, monitor o procesador' value={tipo}
-                   onChange={(e) => setTipo(e.target.value) }/>
-          </div>
           <div className="mb-3">
             <label htmlFor="disabledTextInput" className="form-label">Name</label>
             <input type="text" id="disabledTextInput" className="form-control" value={name}

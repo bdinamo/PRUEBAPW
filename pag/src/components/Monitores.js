@@ -6,57 +6,32 @@ import {httpGet, httpPost} from "../utils/httpFunction"
 
 const Monitores = () => {
 
-
-  const [filtered, setFiltered] = useState(false)
-  const [monitores, setCourses] = useState([])
+  const [monitores, setMonitores] = useState([])
 
   const [name, setName] = useState([])
   const [description, setDescription] = useState([])
+  const [price, setPrice] = useState([])
   
 
-  const imagenes = [
-    { name: 'LG', img:imagnes.LG},
-    { name: 'Asus', img:imagnes.asus},
-    { name: 'Samsung', img:imagnes.samsung},
-    { name: 'HP', img:imagnes.HP},
-    { name: 'DELL', img:imagnes.Dell},
-    { name: 'BENQ', img:imagnes.Benq},
-  ]
+   let finalSubjects = monitores
+  
 
-  const clickFunction = () => {
-    setFiltered(!filtered)
-  }
-
-  const getName = () => {
-    return filtered ? "Dejar de filtrar" : "Filtrar"
-  }
-
-  let finalSubjects;
-
-  if (filtered) {
-    finalSubjects = imagenes.filter((subject) => {
-      return imagenes.approved > 10
-    })
-  } else {
-    finalSubjects = monitores
-  }
-
-  const fetchCourses = () => {
+  const fetchMonitores = () => {
     httpGet('api/monitores/')
-      .then((res) => setCourses(res.data))
+      .then((res) => setMonitores(res.data))
   }
 
-  const createCourse = () => {
-    httpPost('api/monitores/', { name: name, description: description})
-      .then(fetchCourses)
+  const createMonitores = () => {
+    httpPost('api/monitores/', { name: name, description: description, price: price})
+      .then(fetchMonitores)
   }
 
-  useEffect(fetchCourses, [])
+  useEffect(fetchMonitores, [])
 
   return (<div className='general'>
 
     <div className="main-div">
-      <h1 className="custom-title">Nuestras marcas</h1>
+      <h1 className="custom-title">Todos los monitores</h1>
     </div>
     <div className="main-div">
     </div>

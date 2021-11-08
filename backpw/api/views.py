@@ -25,8 +25,7 @@ class RegisterView(generics.CreateAPIView):
 
 @api_view(['get'])
 @permission_classes([IsAuthenticated])
-def me(request,id):
-    print(id)
+def me(request):
     print(MeSerializer(request.user).data)
     return Response(MeSerializer(request.user).data)
 

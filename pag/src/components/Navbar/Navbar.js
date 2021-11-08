@@ -15,11 +15,9 @@ const Navbar = () => {
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <Link to={'/Notebook'}><a class="dropdown-item" href='#'>Notebook</a></Link>
         <Link to={'/Monitores'}><a class="dropdown-item" href="#">Monitores</a></Link>
-        <Link to={'/Accesorios'}><a class="dropdown-item" href="#">Accesorios</a></Link>
         <Link to={'/Procesadores'}><a class="dropdown-item" href="#">Procesadores</a></Link>
-        <Link to={'/addproduct'}><a class="dropdown-item" href="#">Agregar producto</a></Link>
         <li><hr class="dropdown-divider"></hr></li>
-        <Link to={'/Products'}><li><a class="dropdown-item" href="#">Todos los productos</a></li></Link>
+        <Link to={'/addproduct'}><li><a class="dropdown-item" href="#">Agregar productos</a></li></Link>
     </div>
 </div>
     <button className= "btn btn-secondary">  Buscar:</button>
