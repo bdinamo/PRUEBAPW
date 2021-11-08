@@ -1,12 +1,19 @@
 import SubjectCard from "./SubjectCard";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import imagnes from '../images/imgnes';
+import {httpGet, httpPost} from "../utils/httpFunction"
+
 
 const Accesorios = () => {
 
   const [filtered, setFiltered] = useState(false)
+  const [accesorios, setCourses] = useState([])
 
-  const subjects = [
+  const [name, setName] = useState([])
+  const [description, setDescription] = useState([])
+  
+
+  const imagenes = [
     { name: 'Mauses', img:imagnes.accesorios  } ,
     { name: 'Teclados', img:imagnes.accesorios  } ,
     { name: 'Auriculares', img:imagnes.accesorios  } ,
@@ -24,12 +31,24 @@ const Accesorios = () => {
   let finalSubjects;
 
   if (filtered) {
-    finalSubjects = subjects.filter((subject) => {
+    finalSubjects = imagenes.filter((subject) => {
       return subject.approved > 10
     })
   } else {
-    finalSubjects = subjects
+    finalSubjects = accesorios
   }
+
+  const fetchCourses = () => {
+    httpGet('api/product/')
+      .then((res) => setCourses(res.data))
+  }
+
+  const createCourse = () => {
+    httpPost('api/product/', { name: name, description: description})
+      .then(fetchCourses)
+  }
+
+  useEffect(fetchCourses, [])
 
   return (<div className='general'>
     <div className="main-div">
@@ -38,7 +57,7 @@ const Accesorios = () => {
     <div className="main-div">
     </div>
     <div className="all-cards">
-      {
+    {
         finalSubjects
           .map((mapSubject) => {
             return (
@@ -46,7 +65,7 @@ const Accesorios = () => {
             )
           })
       }
-    </div>
+</div>
   </div>)
 }
 

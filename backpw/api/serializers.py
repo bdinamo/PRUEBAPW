@@ -1,12 +1,12 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from api.models import Course
+from api.models import Monitores, Notebook, Procesadores
 
 
-class CourseSerializer(serializers.ModelSerializer):
+class MonitoresSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Course
+        model = Monitores
         fields = "__all__"
 
 
@@ -15,7 +15,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ['username', 'password']
+        fields = ['first_name', 'last_name', 'email', 'username', 'password']
 
     def create(self, validated_data):
         user = get_user_model().objects.create_user(
@@ -24,8 +24,19 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
         return user
 
+
 class MeSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = "__all__"
 
+
+class NotebookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Notebook
+        fields = "__all__"
+
+class ProcesadoresSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Procesadores
+        fields = "__all__"
