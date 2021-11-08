@@ -20,7 +20,7 @@ const LoginScreen = () => {
 
   return (
     <div className='login-screen'>
-      <div className='welcome-text-container'><h1>Bienvenidos a nuestra página de cursos</h1></div>
+      <div className='welcome-text-container'><h1>Bienvenidos a nuestra página de ventas</h1></div>
       <form className='form-container' onSubmit={login}>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
@@ -29,6 +29,7 @@ const LoginScreen = () => {
             id="exampleFormControlInput1"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            placeholder="email@email.com"
           />
         </div>
         <div className="mb-3">
