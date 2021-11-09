@@ -12,6 +12,7 @@ const Notebooks = () => {
   const [price, setPrice] = useState([])
 
   let finalSubjects = notebook
+  
 
   const fetchNotebook = () => {
     httpGet('api/products/?tipoproducto=Notebook')

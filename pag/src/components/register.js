@@ -1,38 +1,34 @@
 
 import SubjectCard from "./SubjectCard";
 import {useEffect, useState} from "react";
-import {httpGet, httpPost} from "../utils/httpFunction"
+import {httpPost2} from "../utils/httpFunction"
+import {useHistory} from 'react-router-dom'
 
 
 const Register = () => {
 
-  const [register, setRegister] = useState([])
   const [first_name, setFirstname] = useState([])
   const [last_name, setLastname] = useState([])
   const [email, setEmail] = useState([])
   const [username, setUsername] = useState([])
   const [password, setPassword] = useState([])
+  const history = useHistory();
 
-
-
-  const fetchRegister = () => {
-    httpGet('api/register/')
-      .then((res) => setRegister(res.data))
+  const signin = (e) => {
+    e.preventDefault()
+    httpPost2('api/register/', { first_name : first_name, last_name : last_name, email : email, username : username,
+      password : password}).then(() => { 
+      history.push('/Login')
+    })
   }
-
-  const createRegister = () => {
-    httpPost('api/register/', { first_name : first_name, last_name : last_name, email : email, username : username,
-    password : password})
-  }
-
-  useEffect(fetchRegister, [])
+  
 
   return (
   <div className='login-screen'>
       <div className='welcome-text-container'><h1>Bienvenidos a nuestro portal de compra y ventas</h1></div>
       <div className='form-container'>
   <div className="main-div">
-    <form onSubmit={createRegister}>
+    <form onSubmit={signin}>
       <fieldset>
         <div className="mb-3">
           <label htmlFor="disabledTextInput" className="form-label">Name</label>
@@ -59,7 +55,7 @@ const Register = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="disabledTextInput" className="form-label">Contraseña</label>
-          <input type="text" id="disabledTextInput" className="form-control" value={password}
+          <input type="password" id="disabledTextInput" className="form-control" value={password}
                  onChange={(e) => setPassword(e.target.value) }
           />
         </div>
@@ -71,5 +67,12 @@ const Register = () => {
   </div>
 )
 }
+
+const cartel = () => {
+  return(
+  <div class="alert alert-warning alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>¡Cuidado!</strong> Es muy importante que leas este mensaje de alerta.
+  </div>)}
 
 export default Register

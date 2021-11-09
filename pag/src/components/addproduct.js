@@ -17,7 +17,7 @@ const Addproduct = () => {
 
 
   const fetchProducts = () => {
-    httpGet('api/products/')
+    httpGet('api/products/?namecontainnotebook')
       .then((res) => setProducts(res.data))
   }
 

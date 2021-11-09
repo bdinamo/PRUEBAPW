@@ -15,6 +15,10 @@ export const httpPost = async (endpoint, data) => {
     authorization: 'Bearer ' + localStorage.getItem('token')
   }
 })
+
 }
 
-
+export const httpPost2 = async (endpoint, data) => {
+  return axios.post(baseUrl + endpoint, data,
+)
+}
