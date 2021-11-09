@@ -14,9 +14,11 @@ const Procesadores = () => {
   let finalSubjects = procesadores
 
   const fetchProcesadores = () => {
-    httpGet('api/procesadores/')
+    httpGet('api/products/?tipoproducto=Procesador')
       .then((res) => setProcesadores(res.data))
   }
+
+  console.log(procesadores)
 
   const createProcesadores = () => {
     httpPost('api/procesadores/', { name: name, description: description, price: price})

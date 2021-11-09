@@ -17,7 +17,7 @@ const Monitores = () => {
   
 
   const fetchMonitores = () => {
-    httpGet('api/monitores/')
+    httpGet('api/products/?tipoproducto=Monitor')
       .then((res) => setMonitores(res.data))
   }
 

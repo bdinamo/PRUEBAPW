@@ -14,7 +14,7 @@ const Notebooks = () => {
   let finalSubjects = notebook
 
   const fetchNotebook = () => {
-    httpGet('api/notebook/')
+    httpGet('api/products/?tipoproducto=Notebook')
       .then((res) => 
      setNotebooks(res.data))
   }

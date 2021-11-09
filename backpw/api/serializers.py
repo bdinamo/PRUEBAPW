@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from api.models import Monitores, Notebook, Procesadores
+from api.models import Monitores, Notebook, Procesadores, Products
 
 
 class MonitoresSerializer(serializers.ModelSerializer):
@@ -39,4 +39,9 @@ class NotebookSerializer(serializers.ModelSerializer):
 class ProcesadoresSerializer(serializers.ModelSerializer):
     class Meta:
         model = Procesadores
+        fields = "__all__"
+
+class ProductsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Products
         fields = "__all__"
