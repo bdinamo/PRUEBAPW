@@ -16,8 +16,7 @@ import Inicio from './components/Inicio';
 import Notebooks from './components/Notebook';
 import Monitores from './components/Monitores';
 import Procesadores from './components/Procesadores';
-import Accesorios from './components/Accesorios';
-import Addproduct from './components/addproduct';
+import Abm from './components/abm';
 
 
 
@@ -30,8 +29,8 @@ function App() {
         <Route exact={true} path={`/register`}>
               <Register />
             </Route>
-            <Route exact={true} path={`/addproduct`}>
-              <Addproduct />
+            <Route exact={true} path={`/abm`}>
+              <Abm />
             </Route>
             <AuthRoute exact={true} path={`/profile`}>
             <Profile />
@@ -55,9 +54,6 @@ function App() {
             </Route>
             <Route exact={true} path={`/Procesadores`}>
               <Procesadores />
-            </Route>
-            <Route exact={true} path={`/Accesorios`}>
-              <Accesorios />
             </Route>
             <Route exact={true} path={`/Inicio`}>
               <Inicio />

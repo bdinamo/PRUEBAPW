@@ -3,6 +3,7 @@ import SubjectCard from "./SubjectCard";
 import {useEffect, useState} from "react";
 import {httpPost2} from "../utils/httpFunction"
 import {useHistory} from 'react-router-dom'
+import {Link} from "react-router-dom";
 
 
 const Register = () => {
@@ -60,6 +61,7 @@ const Register = () => {
           />
         </div>
         <button type="submit" className="btn btn-primary">Registrarse</button>
+        <Link to={'/inicio'}><button class="btn btn-secondary">Volver al Inicio</button></Link>
       </fieldset>
     </form>
     </div>

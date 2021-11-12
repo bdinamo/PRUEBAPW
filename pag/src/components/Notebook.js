@@ -1,7 +1,8 @@
 import SubjectCard from "./SubjectCard";
 import {useEffect, useState} from "react";
 import imagnes from '../images/imgnes';
-import {httpGet, httpPost} from "../utils/httpFunction"
+import {httpGet, httpPost} from "../utils/httpFunction";
+import {Link} from "react-router-dom";
 
 const Notebooks = () => {
 
@@ -31,6 +32,7 @@ const Notebooks = () => {
   return (<div className='general'>
     <div className="main-div">
       <h1 className="custom-title">Todas las notebooks</h1>
+      <Link to={'/inicio'}><button class="btn btn-secondary">Volver al Inicio</button></Link>
     </div>
     <div className="main-div">
     </div>

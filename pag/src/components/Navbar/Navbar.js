@@ -1,8 +1,9 @@
 import './Navbar.css';
 import {Link} from "react-router-dom";
 
-
 const Navbar = () => {
+
+   
   return <div className="navbar">
     <Link to={'/Inicio'}><button class="btn btn-secondary">Inicio</button></Link>
     <Link to={'/login'}><button class="btn btn-secondary">Ingresá</button></Link>
@@ -17,11 +18,13 @@ const Navbar = () => {
         <Link to={'/Monitores'}><a class="dropdown-item" href="#">Monitores</a></Link>
         <Link to={'/Procesadores'}><a class="dropdown-item" href="#">Procesadores</a></Link>
         <li><hr class="dropdown-divider"></hr></li>
-        <Link to={'/addproduct'}><li><a class="dropdown-item" href="#">Agregar productos</a></li></Link>
+        <Link to={'/products'}><li><a class="dropdown-item" href="#">Todos los productos</a></li></Link>
+        <li><hr class="dropdown-divider"></hr></li>
+        <Link to={'/abm'}><li><a class="dropdown-item" href="#">Abm</a></li></Link>
     </div>
 </div>
-    <button className= "btn btn-secondary">  Buscar:</button>
-    <button className="navbar-element-barra" ><input type="text" maxlength="50"></input></button>
+    <button className= "btn btn-secondary"> Buscar:</button>
+    <button className="navbar-element-barra" ><input type="text" maxlength="50"/></button>
     </div>
 }
 export default Navbar;

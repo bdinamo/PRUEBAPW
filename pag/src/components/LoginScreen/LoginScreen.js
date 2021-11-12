@@ -1,7 +1,8 @@
 import './LoginScreen.css'
 import {useState} from "react";
 import {httpPost} from "../../utils/httpFunction";
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
+import {Link} from "react-router-dom";
 
 const LoginScreen = () => {
 
@@ -44,6 +45,7 @@ const LoginScreen = () => {
         </div>
         <div className={'button-container'}>
           <button type="submit" className="btn btn-primary">Login</button>
+          <Link to={'/inicio'}><button class="btn btn-secondary">Inicio</button></Link>
         </div>
       </form>
     </div>
