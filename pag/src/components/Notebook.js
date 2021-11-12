@@ -8,10 +8,6 @@ const Notebooks = () => {
 
   const [notebook, setNotebooks] = useState([])
 
-  const [name, setName] = useState([])
-  const [description, setDescription] = useState([])
-  const [price, setPrice] = useState([])
-
   let finalSubjects = notebook
   
 
@@ -21,11 +17,6 @@ const Notebooks = () => {
      setNotebooks(res.data))
   }
   
-
-  const createNotebook = () => {
-    httpPost('api/notebook/', { name: name, description: description})
-      .then(fetchNotebook)
-  }
 
   useEffect(fetchNotebook, [])
 

@@ -8,10 +8,6 @@ import {Link} from "react-router-dom";
 const Monitores = () => {
 
   const [monitores, setMonitores] = useState([])
-
-  const [name, setName] = useState([])
-  const [description, setDescription] = useState([])
-  const [price, setPrice] = useState([])
   
 
    let finalSubjects = monitores
@@ -20,11 +16,6 @@ const Monitores = () => {
   const fetchMonitores = () => {
     httpGet('api/products/?tipoproducto=Monitor')
       .then((res) => setMonitores(res.data))
-  }
-
-  const createMonitores = () => {
-    httpPost('api/monitores/', { name: name, description: description, price: price})
-      .then(fetchMonitores)
   }
 
   useEffect(fetchMonitores, [])

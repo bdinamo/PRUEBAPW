@@ -16,7 +16,8 @@ import Inicio from './components/Inicio';
 import Notebooks from './components/Notebook';
 import Monitores from './components/Monitores';
 import Procesadores from './components/Procesadores';
-import Abm from './components/abm';
+import Abm from './components/Abm/abm';
+
 
 
 

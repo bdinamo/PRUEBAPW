@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './abm.css';
+import '../Abm/abm.css';
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,7 +23,7 @@ state={
   }
 }
 
-peticionGet=()=>{
+pedidoGet=()=>{
 axios.get(url).then(response=>{
   this.setState({data: response.data});
 }).catch(error=>{
@@ -31,27 +31,27 @@ axios.get(url).then(response=>{
 })
 }
 
-peticionPost=async()=>{
+PedidoPost=async()=>{
   delete this.state.form.id;
  await axios.post(url,this.state.form).then(response=>{
     this.modalInsertar();
-    this.peticionGet();
+    this.pedidoGet();
   }).catch(error=>{
     console.log(error.message);
   })
 }
 
-peticionPut=()=>{
+PedidoPut=()=>{
   axios.put(url+this.state.form.id+'/',this.state.form).then(response=>{
     this.modalInsertar();
-    this.peticionGet();
+    this.pedidoGet();
   })
 }
 
-peticionDelete=()=>{
+PedidoDelete=()=>{
   axios.delete(url+this.state.form.id).then(response=>{
     this.setState({modalEliminar: false});
-    this.peticionGet();
+    this.pedidoGet();
   })
 }
 
@@ -84,7 +84,7 @@ console.log(this.state.form);
 }
 
   componentDidMount() {
-    this.peticionGet();
+    this.pedidoGet();
   }
   
 
@@ -154,9 +154,9 @@ console.log(this.state.form);
 
                 <ModalFooter>
                   {this.state.tipoModal=='insertar'?
-                    <button className="btn btn-success" onClick={()=>this.peticionPost()}>
+                    <button className="btn btn-success" onClick={()=>this.PedidoPost()}>
                     Insertar
-                  </button>: <button className="btn btn-primary" onClick={()=>this.peticionPut()}>
+                  </button>: <button className="btn btn-primary" onClick={()=>this.PedidoPut()}>
                     Actualizar
                   </button>
                     }
@@ -170,7 +170,7 @@ console.log(this.state.form);
                Estás seguro que deseas eliminar el producto {form && form.name} ?
             </ModalBody>
             <ModalFooter>
-              <button className="btn btn-danger" onClick={()=>this.peticionDelete()}>Sí</button>
+              <button className="btn btn-danger" onClick={()=>this.PedidoDelete()}>Sí</button>
               <button className="btn btn-secundary" onClick={()=>this.setState({modalEliminar: false})}>No</button>
             </ModalFooter>
           </Modal>

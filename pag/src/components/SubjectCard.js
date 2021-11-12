@@ -1,3 +1,4 @@
+
 import pgimg from "../images/Procesadores.jpg";
 
 import {Link} from "react-router-dom";
