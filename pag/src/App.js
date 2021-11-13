@@ -17,6 +17,7 @@ import Notebooks from './components/Notebook';
 import Monitores from './components/Monitores';
 import Procesadores from './components/Procesadores';
 import Abm from './components/Abm/abm';
+import Carrito from './components/Cart/carrito';
 
 
 
@@ -29,6 +30,9 @@ function App() {
         <Switch>
         <Route exact={true} path={`/register`}>
               <Register />
+            </Route>
+            <Route exact={true} path={`/carrito`}>
+              <Carrito/>
             </Route>
             <Route exact={true} path={`/abm`}>
               <Abm />

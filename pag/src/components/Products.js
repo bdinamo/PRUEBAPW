@@ -3,8 +3,10 @@ import {httpGet} from "../utils/httpFunction"
 import SubjectCard from "./SubjectCard";
 import {Link} from "react-router-dom";
 
+
 const Product = () => {
-   
+
+
   const [products, setProducts] = useState([])
 
   const fetchProducts = () => {
@@ -12,7 +14,8 @@ const Product = () => {
       .then((res) => setProducts(res.data))
   }
 
-  useEffect(fetchProducts, [])
+  useEffect(fetchProducts, []) 
+
 
     return (<div className='general'>
     <div className="main-div">

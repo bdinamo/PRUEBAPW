@@ -1,7 +1,6 @@
 import SubjectCard from "./SubjectCard";
 import {useEffect, useState} from "react";
-import imagnes from '../images/imgnes';
-import {httpGet, httpPost} from "../utils/httpFunction";
+import {httpGet} from "../utils/httpFunction";
 import {Link} from "react-router-dom";
 
 const Procesadores = () => {

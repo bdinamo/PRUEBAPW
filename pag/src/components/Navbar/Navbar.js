@@ -1,6 +1,7 @@
 import './Navbar.css';
 import {Link} from "react-router-dom";
 
+
 const Navbar = () => {
 
    
@@ -9,6 +10,7 @@ const Navbar = () => {
     <Link to={'/login'}><button class="btn btn-secondary">Ingresá</button></Link>
     <Link to={'/register'}><button class="btn btn-secondary">Registrate</button></Link>
     <Link to={'/profile'}><button class="btn btn-secondary">Mi perfil</button></Link>
+    <Link to={'/carrito'}><button class="btn btn-secondary">Tienda virtual</button></Link>
     <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Productos
@@ -25,6 +27,7 @@ const Navbar = () => {
 </div>
     <button className= "btn btn-secondary"> Buscar:</button>
     <button className="navbar-element-barra" ><input type="text" maxlength="50"/></button>
+
     </div>
 }
 export default Navbar;
