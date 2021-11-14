@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {httpPost2} from "../utils/httpFunction"
 import {useHistory} from 'react-router-dom'
 import {Link} from "react-router-dom";
-
+import Swal from'sweetalert2';
 
 const Register = () => {
 
@@ -19,8 +19,9 @@ const Register = () => {
     e.preventDefault()
     httpPost2('api/register/', { first_name : first_name, last_name : last_name, email : email, username : username,
       password : password}).then(() => { 
+      window.alert('Se ha registrado con éxito, por favor Inicie sesión')
       history.push('/Login')
-    })
+    }).catch( e => window.alert(e.message))
   }
   
 
