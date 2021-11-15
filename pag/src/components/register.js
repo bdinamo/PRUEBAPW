@@ -1,10 +1,9 @@
 
-import SubjectCard from "./SubjectCard";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {httpPost2} from "../utils/httpFunction"
 import {useHistory} from 'react-router-dom'
 import {Link} from "react-router-dom";
-import Swal from'sweetalert2';
+
 
 const Register = () => {
 
@@ -27,7 +26,7 @@ const Register = () => {
 
   return (
   <div className='login-screen'>
-      <div className='welcome-text-container'><h1>Bienvenidos a nuestro portal de compra y ventas</h1></div>
+      <div className='welcome-text-container'><h1>Bienvenidos a nuestro portal de compra</h1></div>
       <div className='form-container'>
   <div className="main-div">
     <form onSubmit={signin}>

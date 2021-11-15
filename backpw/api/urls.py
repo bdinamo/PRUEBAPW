@@ -2,7 +2,7 @@
 from django.urls import path, include
 from rest_framework import routers
 
-from api.views import MonitoresViewSet, NotebookViewSet, ProcesadoresViewSet, ProductsViewSet
+from api.views import  ProductsViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from api.views import RegisterView
@@ -10,9 +10,6 @@ from api.views import RegisterView
 from api.views import me
 
 router = routers.DefaultRouter()
-router.register(r'monitores', MonitoresViewSet)
-router.register(r'notebook', NotebookViewSet)
-router.register(r'procesadores', ProcesadoresViewSet)
 router.register(r'products', ProductsViewSet)
 
 

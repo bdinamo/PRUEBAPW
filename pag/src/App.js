@@ -34,9 +34,9 @@ function App() {
             <Route exact={true} path={`/carrito`}>
               <Carrito/>
             </Route>
-            <Route exact={true} path={`/abm`}>
+            <AuthRoute exact={true} path={`/abm`}>
               <Abm />
-            </Route>
+            </AuthRoute>
             <AuthRoute exact={true} path={`/profile`}>
             <Profile />
           </AuthRoute>
