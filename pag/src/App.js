@@ -18,6 +18,7 @@ import Monitores from './components/Monitores';
 import Procesadores from './components/Procesadores';
 import Abm from './components/Abm/abm';
 import Carrito from './components/Cart/carrito';
+import Search from './components/Buscar';
 
 
 
@@ -30,6 +31,9 @@ function App() {
         <Switch>
         <Route exact={true} path={`/register`}>
               <Register />
+            </Route>
+            <Route exact={true} path={`/search`}>
+              <Search />
             </Route>
             <Route exact={true} path={`/carrito`}>
               <Carrito/>

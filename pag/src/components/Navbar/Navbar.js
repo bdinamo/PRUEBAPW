@@ -25,9 +25,7 @@ const Navbar = () => {
         <Link to={'/abm'}><li><a class="dropdown-item" href="#">Abm</a></li></Link>
     </div>
 </div>
-    <button className= "btn btn-secondary"> Buscar:</button>
-    <button className="navbar-element-barra" ><input type="text" maxlength="50"/></button>
-
+<Link to={'/search'}><button className= "btn btn-secondary" >Buscar</button></Link>
     </div>
 }
 export default Navbar;

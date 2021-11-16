@@ -3,6 +3,7 @@ import {useState} from "react";
 import {httpPost2} from "../utils/httpFunction"
 import {useHistory} from 'react-router-dom'
 import {Link} from "react-router-dom";
+import swal from 'sweetalert2'
 
 
 const Register = () => {
@@ -14,14 +15,30 @@ const Register = () => {
   const [password, setPassword] = useState([])
   const history = useHistory();
 
+  const mostrarAlerta=()=>{
+    swal.fire({
+      title: 'Se ha registrado con éxito, por favor Inicie sesión',
+      icon: 'success'}
+    )
+  }
+
+  const mostrarError=()=>{
+    swal.fire({
+      title: 'No se pudo registrar, intente nuevamente',
+      icon: 'error'}
+    )
+  }
   const signin = (e) => {
     e.preventDefault()
     httpPost2('api/register/', { first_name : first_name, last_name : last_name, email : email, username : username,
-      password : password}).then(() => { 
-      window.alert('Se ha registrado con éxito, por favor Inicie sesión')
-      history.push('/Login')
-    }).catch( e => window.alert(e.message))
-  }
+      password : password}).then(() => {  
+         mostrarAlerta(); 
+        history.push('/Login');
+      
+      /*window.alert('Se ha registrado con éxito, por favor Inicie sesión')*/
+    }).catch(() => {  
+      mostrarError(); 
+  })}
   
 
   return (

@@ -6,8 +6,7 @@ import {Link} from "react-router-dom";
 
 const Product = () => {
 
-
-  const [products, setProducts] = useState([])
+ const [products, setProducts] = useState([])
 
   const fetchProducts = () => {
     httpGet('api/products/')

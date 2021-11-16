@@ -1,8 +1,8 @@
 import Header from './Headers';
 import Main from './Main';
 import Basket from './Basket';
-import { useState } from 'react';
-import data from './date';
+import { useState, useEffect } from 'react';
+import {httpGet} from "../../utils/httpFunction"
 import './carrito.css'
 
 
@@ -10,7 +10,14 @@ import './carrito.css'
 
 
 function Carrito() {
-  const { products } = data;
+  const [products, setProducts] = useState([])
+
+  const fetchProducts = () => {
+    httpGet('api/products/')
+      .then((res) => setProducts(res.data))
+  }
+
+  useEffect(fetchProducts, []) 
   const [cartItems, setCartItems] = useState([]);
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
