@@ -1,9 +1,12 @@
-
+import { Link } from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import pgimg from "../images/Procesadores.jpg";
+import './buscar.css'
+
 
 function Search() {
 
@@ -45,42 +48,35 @@ peticionGet();
   return (
     <div className="App">
       <div className="containerInput">
-        <input
-          className="form-control inputBuscar"
+      <Link to={'/inicio'}><button class="btn btn-secondary">Volver al Inicio</button></Link>
+      <button className="btn btn-primary inputBuscar">
+          <input
+          className= 'inputBuscar'
           value={busqueda}
           placeholder="Búsqueda por Producto, descripción o precio"
           onChange={handleChange}/>
-        <button className="btn btn-success">
           <FontAwesomeIcon icon={faSearch}/>
         </button>
       </div>
-
-     <div className="table-responsive">
-       <table className="table table-sm table-bordered">
-         <thead>
-           <tr>
-             <th>Nombre</th>
-             <th>Descripcion</th>
-             <th>Precio</th>
-           </tr>
-         </thead>
-
-         <tbody>
-           {productos && 
-           productos.map((producto)=>(
-             <tr key={producto.id}>
-               <td>{producto.name}</td>
-               <td>{producto.description}</td>
-               <td>{producto.price}</td>
-             </tr>
-           ))}
-         </tbody>
-
-       </table>
-
-     </div>
+        
+      <div className="all-cards" >
+       {productos && 
+           productos.map((producto)=>( 
+        <div className="all-cards" >
+       <div className="card-container-custom">
+      <div className="card">
+      <img src={pgimg} className="card-img-top" alt="..."/>
+        <div className="card-body">
+          <h5 className="card-title">{producto.name} </h5>
+          <h6 className="card-title">${producto.price} </h6>
+          <p className="card-text">{producto.description}</p>
+          <Link to={`/carrito`}><a className="btn btn-primary">Comprar en la tienda</a></Link>
+        </div>
+      </div>
     </div>
-  );
+    </div>
+           ))}</div></div>
+     
+           );
 }
-
-export default Search;
+export default Search

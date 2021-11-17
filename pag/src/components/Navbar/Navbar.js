@@ -1,5 +1,6 @@
 import './Navbar.css';
 import {Link} from "react-router-dom";
+import Header from '../Cart/Headers';
 
 
 const Navbar = () => {

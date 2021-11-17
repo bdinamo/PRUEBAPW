@@ -9,7 +9,6 @@ import Products from "./components/Products";
 import Profile from "./components/Profile";
 import Navbar from "./components/Navbar/Navbar";
 import LoginScreen from "./components/LoginScreen/LoginScreen";
-import Productdetail from "./components/Productdetail/Productdetail";
 import AuthRoute from "./components/AuthRoute";
 import Register from './components/register';
 import Inicio from './components/Inicio';
@@ -51,9 +50,6 @@ function App() {
             <Navbar />
             <Route exact={true} path={`/Products`}>
               <Products />
-            </Route>
-            <Route exact={true} path={`/products/detail/:id`}>
-              <Productdetail/>
             </Route>
             <Route exact={true} path={`/Notebook`}>
               <Notebooks />

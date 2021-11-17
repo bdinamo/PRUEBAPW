@@ -33,15 +33,15 @@ export default function Basket(props) {
           <>
             <hr></hr>
             <div className="row">
-              <div className="col-2">Items Price</div>
+              <div className="col-2">Precio articulo</div>
               <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
             </div>
             <div className="row">
-              <div className="col-2">Tax Price</div>
+              <div className="col-2">Impuestos</div>
               <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
             </div>
             <div className="row">
-              <div className="col-2">Shipping Price</div>
+              <div className="col-2">Costos envio</div>
               <div className="col-1 text-right">
                 ${shippingPrice.toFixed(2)}
               </div>
@@ -49,7 +49,7 @@ export default function Basket(props) {
 
             <div className="row">
               <div className="col-2">
-                <strong>Total Price</strong>
+                <strong>Total</strong>
               </div>
               <div className="col-1 text-right">
                 <strong>${totalPrice.toFixed(2)}</strong>
@@ -57,7 +57,7 @@ export default function Basket(props) {
             </div>
             <hr />
             <div className="row">
-              <button onClick={() => alert('Implement Checkout!')}>
+              <button onClick={() => alert('Falta implementar!')}>
                 Checkout
               </button>
             </div>

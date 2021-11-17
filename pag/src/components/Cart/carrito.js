@@ -44,7 +44,7 @@ function Carrito() {
     }
   };
   return (
-    <div className="App">
+    <div className="App ">
       <Header countCartItems={cartItems.length}></Header>
       <div className="row">
         <Main products={products} onAdd={onAdd}></Main>

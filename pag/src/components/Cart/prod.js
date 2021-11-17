@@ -1,17 +1,24 @@
    
 import React from 'react';
+import pgimg from "../../images/Procesadores.jpg";
 
 export default function Product(props) {
   const { product, onAdd } = props;
   return (
-    <div>
-      <img className="small" src={product.image} alt={product.name} />
-      <h3 classname = 'a'>{product.name}</h3>
-      <div>${product.price}</div>
-      <div>
-        <button onClick={() => onAdd(product)}>Add To Cart</button>
-      </div>
-    </div>
-  );
+    
+  <div className="all-cards">
+        <div className="card-container-custom">
+          <div className="card">
+            <img src={pgimg} className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">{product.name} </h5>
+              <h6 className="card-title">${product.price} </h6>
+              <p className="card-text">{product.description}</p>
+              <button className="btn btn-primary" onClick={() => onAdd(product)}>Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+        </div>
+  )
 }
-/*src={product.image}*/
+
