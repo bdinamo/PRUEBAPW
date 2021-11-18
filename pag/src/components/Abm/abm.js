@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import {Link} from "react-router-dom";
+import pgimg from '../../images/Procesadores.jpg';
 
 const url='http://127.0.0.1:8000/api/products/';
 
@@ -73,7 +74,6 @@ seleccionarProducto=(producto)=>{
 }
 
 handleChange=async e=>{
-e.persist();
 await this.setState({
   form:{
     ...this.state.form,
@@ -97,43 +97,39 @@ console.log(this.state.form);
   <Link to={'/inicio'}><button class="btn btn-secondary">Volver al Inicio</button></Link>
   
   <br /><br />
-    <table className="table ">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Descripcion</th>
-          <th>Precio</th>
-          <th>Tipo de producto</th>
-        </tr>
-      </thead>
       <tbody>
+      <div className="all-cards" >
         {this.state.data.map(producto=>{
           return(
-            <tr>
-              <td>{producto.id}</td>
-          <td>{producto.name}</td>
-          <td>{producto.description}</td>
-          <td>{producto.price}</td>
-          <td>{producto.tipoproducto}</td>
-          <td>
+            <tr><div className="card-container-custom">
+            <div className="card">
+            <img src={pgimg} className="card-img-top" alt="..."/>
+              <div className="card-body">
+                <h5 className="card-title">{producto.name} </h5>
+                <h6 className="card-title">${producto.price} </h6>
+                <p className="card-text">{producto.description}</p>
+                <td>
                 <button className="btn btn-primary" onClick={()=>{this.seleccionarProducto(producto); this.modalInsertar()}}><FontAwesomeIcon icon={faEdit}/></button>
                 {"   "}
                 <button className="btn btn-danger" onClick={()=>{this.seleccionarProducto(producto); this.setState({modalEliminar: true})}}><FontAwesomeIcon icon={faTrashAlt}/></button>
                 </td>
+              </div>
+            </div>
+          </div>
           </tr>
           )
         })}
+        </div>
       </tbody>
-    </table>
+  
 
 
 
-    <Modal isOpen={this.state.modalInsertar}>
-                <ModalHeader style={{display: 'block'}}>
-                  <span style={{float: 'right'}} onClick={()=>this.modalInsertar()}>x</span>
-                </ModalHeader>
-                <ModalBody>
+  <Modal isOpen={this.state.modalInsertar}>
+            <ModalHeader style={{display: 'block'}}>
+              <span style={{float: 'right'}} onClick={()=>this.modalInsertar()}>x</span>
+             </ModalHeader>
+            <ModalBody>
                   <div className="form-group">
                    <label htmlFor="id">ID</label>
                     <input className="form-control" type="text" name="id" id="id" readOnly onChange={this.handleChange} value={form?form.id: ''}/>
@@ -167,7 +163,7 @@ console.log(this.state.form);
 
           <Modal isOpen={this.state.modalEliminar}>
             <ModalBody>
-               Estás seguro que deseas eliminar el producto {form && form.name} ?
+               Estás seguro que deseas eliminar el producto {form.name} ?
             </ModalBody>
             <ModalFooter>
               <button className="btn btn-danger" onClick={()=>this.PedidoDelete()}>Sí</button>
