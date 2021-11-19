@@ -163,7 +163,7 @@ console.log(this.state.form);
 
           <Modal isOpen={this.state.modalEliminar}>
             <ModalBody>
-               Estás seguro que deseas eliminar el producto {form.name} ?
+               Estás seguro que deseas eliminar el producto {form && form.name} ?
             </ModalBody>
             <ModalFooter>
               <button className="btn btn-danger" onClick={()=>this.PedidoDelete()}>Sí</button>

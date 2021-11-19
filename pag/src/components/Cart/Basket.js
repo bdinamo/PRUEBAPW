@@ -1,4 +1,5 @@
 import React from 'react';
+import './carrito.css'
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
