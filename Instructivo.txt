@@ -1,0 +1,7 @@
+Carpeta PAG es la parte del Frontend
+Carpeta BACKPW es la parte del Backend
+
+Para correr ambos hay que ejecutar los comandos que vimos en las clases.
+
+Además de las librerias que utilizamos en clases utilizamos modals de Reacstrap para el ABM, Font Awesone para iconos, swal de sweetalert2 para 
+el registro.
