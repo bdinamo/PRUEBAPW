@@ -5,3 +5,11 @@ Para correr ambos hay que ejecutar los comandos que vimos en las clases.
 
 Además de las librerias que utilizamos en clases utilizamos modals de Reacstrap para el ABM, Font Awesone para iconos, swal de sweetalert2 para 
 el registro.
+
+FRONT:
+En la carpeta CART dentro de components está el código del carrito y en la carpeta ABM el del ABM.
+Dentro de la carpeta component, el código del buscador está en Buscar.js
+El código de donde nos traemos los productos del back está en Notebook.js, Procesadores.js, Monitores.js y Products.js
+
+BACK:
+Hicimos un solo model llamado productos y nos traemos lo que necesitamos mediante query params.
