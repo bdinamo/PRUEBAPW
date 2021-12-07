@@ -7,15 +7,25 @@ import {Link} from "react-router-dom";
 const Notebooks = () => {
 
   const [notebook, setNotebooks] = useState([])
+  const [filtered, setFiltered] = useState(true)
 
   let finalSubjects = notebook
-  
+
+   const getName = () => {
+    return filtered ? "Dejar de filtrar" : "FIltrar Mayores a $60000"
+  }
 
   const fetchNotebook = () => {
-    httpGet('api/products/?tipoproducto=Notebook')
-      .then((res) => 
-     setNotebooks(res.data))
-  }
+    setFiltered(!filtered)
+    if (filtered) {
+      httpGet('api/products/?tipoproducto=Notebook')
+        .then((res) => setNotebooks(res.data))
+        
+      }
+  else {
+    httpGet('api/products/?tipoproducto=Notebook&price=60000')
+      .then((res) => setNotebooks(res.data))
+  }}
   
 
   useEffect(fetchNotebook, [])
@@ -24,6 +34,9 @@ const Notebooks = () => {
     <div className="main-div">
       <h1 className="custom-title">Todas las notebooks</h1>
       <Link to={'/inicio'}><button class="btn btn-secondary">Volver al Inicio</button></Link>
+      <button className="btn btn-primary" onClick={fetchNotebook}>
+        {getName()}
+      </button>
     </div>
     <div className="main-div">
     </div>
