@@ -32,9 +32,15 @@ class ProductsViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = Products.objects.all()
         tipoproducto = self.request.query_params.get('tipoproducto')
-        if tipoproducto is not None:
+        price = self.request.query_params.get('price')
+        if tipoproducto is not None and price is not None:
+            queryset = queryset.filter(tipoproducto=tipoproducto).filter(price__gte=price)
+        elif tipoproducto is not None:
             queryset = queryset.filter(tipoproducto=tipoproducto)
+        elif price is not None:
+            queryset = queryset.filter(price__gte=price)
         return queryset
+
 
 
 

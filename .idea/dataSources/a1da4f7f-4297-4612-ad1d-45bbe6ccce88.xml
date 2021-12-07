@@ -7,9 +7,9 @@
     <schema id="2" parent="1" name="main">
       <Current>1</Current>
     </schema>
-    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="3" parent="1" name="RTRIM"/>
     <collation id="4" parent="1" name="NOCASE"/>
-    <collation id="5" parent="1" name="RTRIM"/>
+    <collation id="5" parent="1" name="BINARY"/>
     <table id="6" parent="2" name="api_products"/>
     <table id="7" parent="2" name="auth_group"/>
     <table id="8" parent="2" name="auth_group_permissions"/>
