@@ -6,33 +6,36 @@ import {Link} from "react-router-dom";
 const Procesadores = () => {
 
   const [procesadores, setProcesadores] = useState([])
-  const [filtered, setFiltered] = useState(true)
+  const [filtered, setFiltered] = useState(false)
 
   let finalSubjects = procesadores
+
+  const clickFunction = () => {
+    setFiltered(!filtered)
+  }
 
   const getName = () => {
     return filtered ?  "Dejar de filtrar" : "FIltrar Mayores a $100000" 
   }
 
   const fetchProcesadores = () => {
-    setFiltered(!filtered)
     if (filtered) {
-      httpGet('api/products/?tipoproducto=Procesador')
-        .then((res) => setProcesadores(res.data))
-        
+      httpGet('api/products/?tipoproducto=Procesador&price=100000')
+      .then((res) => setProcesadores(res.data))
       }
   else {
-    httpGet('api/products/?tipoproducto=Procesador&price=100000')
-      .then((res) => setProcesadores(res.data))
+    httpGet('api/products/?tipoproducto=Procesador')
+        .then((res) => setProcesadores(res.data))
+    
   }}
 
-  useEffect(fetchProcesadores, [])
+  useEffect(fetchProcesadores, [filtered])
 
   return (<div className='general'>
     <div className="main-div">
       <h1 className="custom-title">Todos los Procesadores</h1>
       <Link to={'/inicio'}><button class="btn btn-secondary">Volver al Inicio</button></Link>
-      <button className="btn btn-primary" onClick={fetchProcesadores}>
+      <button className="btn btn-primary" onClick={clickFunction}>
         {getName()}
       </button>
     </div>

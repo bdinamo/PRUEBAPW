@@ -7,34 +7,37 @@ import {Link} from "react-router-dom";
 const Product = () => {
 
  const [products, setProducts] = useState([])
- const [filtered, setFiltered] = useState(true)
+ const [filtered, setFiltered] = useState(false)
 
  const getName = () => {
   return filtered ? "Dejar de filtrar" :"FIltrar Mayores a $100000" 
 }
 
 
- const fetchProducts = () => {
+const clickFunction = () => {
   setFiltered(!filtered)
+}
+
+const fetchProducts = () => {
   if (filtered) {
-    httpGet('api/products/')
+    httpGet('api/products/?price=100000')
+    .then((res) => setProducts(res.data))
+}
+else {
+  httpGet('api/products/')
     .then((res) => setProducts(res.data))
     }
-else {
-  httpGet('api/products/?price=100000')
-    .then((res) => setProducts(res.data))
-  
-}}
+}
 
 
-  useEffect(fetchProducts, []) 
+  useEffect(fetchProducts, [filtered]) 
 
 
     return (<div className='general'>
     <div className="main-div">
       <h1 className="custom-title">Todos los Productos</h1>
       <Link to={'/inicio'}><button class="btn btn-secondary">Volver al Inicio</button></Link>
-      <button className="btn btn-primary" onClick={fetchProducts}>
+      <button className="btn btn-primary" onClick={clickFunction}>
         {getName()}
       </button>
     </div>

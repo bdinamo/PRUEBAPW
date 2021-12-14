@@ -7,34 +7,36 @@ import {Link} from "react-router-dom";
 const Notebooks = () => {
 
   const [notebook, setNotebooks] = useState([])
-  const [filtered, setFiltered] = useState(true)
+  const [filtered, setFiltered] = useState(false)
 
   let finalSubjects = notebook
+
+  const clickFunction = () => {
+    setFiltered(!filtered)
+  }
 
    const getName = () => {
     return filtered ? "Dejar de filtrar" : "FIltrar Mayores a $60000"
   }
 
   const fetchNotebook = () => {
-    setFiltered(!filtered)
     if (filtered) {
-      httpGet('api/products/?tipoproducto=Notebook')
-        .then((res) => setNotebooks(res.data))
-        
+      httpGet('api/products/?tipoproducto=Notebook&price=60000')
+      .then((res) => setNotebooks(res.data))
       }
   else {
-    httpGet('api/products/?tipoproducto=Notebook&price=60000')
-      .then((res) => setNotebooks(res.data))
+    httpGet('api/products/?tipoproducto=Notebook')
+        .then((res) => setNotebooks(res.data))
   }}
   
 
-  useEffect(fetchNotebook, [])
+  useEffect(fetchNotebook, [filtered])
 
   return (<div className='general'>
     <div className="main-div">
       <h1 className="custom-title">Todas las notebooks</h1>
       <Link to={'/inicio'}><button class="btn btn-secondary">Volver al Inicio</button></Link>
-      <button className="btn btn-primary" onClick={fetchNotebook}>
+      <button className="btn btn-primary" onClick={clickFunction}>
         {getName()}
       </button>
     </div>

@@ -7,35 +7,37 @@ import {Link} from "react-router-dom";
 const Monitores = () => {
 
   const [monitores, setMonitores] = useState([])
-  const [filtered, setFiltered] = useState(true)
+  const [filtered, setFiltered] = useState(false)
 
   let finalSubjects = monitores
-    
+
+  const clickFunction = () => {
+    setFiltered(!filtered)
+  }
+
+  const getName = () => {
+    return filtered ? "Dejar de filtrar" : "Filtrar mayores a $200000"
+  }
 
   const fetchMonitores = () => {
-    setFiltered(!filtered)
     if (filtered) {
-      httpGet('api/products/?tipoproducto=Monitor')
-        .then((res) => setMonitores(res.data))
-        
-      }
-  else {
-    httpGet('api/products/?tipoproducto=Monitor&price=200000')
+      httpGet('api/products/?tipoproducto=Monitor&price=200000')
       .then((res) => setMonitores(res.data))
-  }}
-  
-  const getName = () => {
-    return filtered ? "Dejar de filtrar" : "FIltrar Mayores a $200000"  
   }
+  else {
+    httpGet('api/products/?tipoproducto=Monitor')
+    .then((res) => setMonitores(res.data))
+  }}
+
   
-  useEffect(fetchMonitores,[])
+  useEffect(fetchMonitores,[filtered])
 
   return (<div className='general'>
 
     <div className="main-div">
       <h1 className="custom-title">Todos los monitores</h1>
       <Link to={'/inicio'}><button class="btn btn-secondary">Volver al Inicio</button></Link>
-      <button className="btn btn-primary" onClick={fetchMonitores}>
+      <button className="btn btn-primary" onClick={clickFunction}>
         {getName()}
       </button>
     </div>
